@@ -1,3 +1,4 @@
+//para tag ser acessiver é necessarios estar impor em ngModelue
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';

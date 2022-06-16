@@ -12,3 +12,4 @@ export const ROUTES: Routes =
   { path: 'restaurants/:id', component: RestaurantDetailComponent }
 
 ];
+  

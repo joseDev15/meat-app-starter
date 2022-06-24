@@ -18,7 +18,7 @@ export class ShoppingCartService {
       founditem
     );
     if (founditem) {
-      founditem.quantity = founditem.quantity * 1;
+      founditem.quantity = founditem.quantity + 1;
       console.log(
         "🚀 ~ file: shopping-cart.service.ts ~ line 15 ~ ShoppingCartService ~ addItem ~ founditem",
         founditem

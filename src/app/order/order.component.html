@@ -52,10 +52,25 @@
               "
               ><i class="fa fa-check"></i> Ok</span
             >
+            <span
+              class="help-block"
+              *ngIf="
+                !iptAndress.valid && (iptAndress.dirty || iptAndress.touched)
+              "
+              ><i class="fa fa-check"></i> campo Obrigatorio</span
+            >
           </div>
         </div>
         <div class="col-sm-2 col-xs-6">
-          <div class="form-group has-success">
+          <div
+            class="form-group"
+            [class.has-sucess]="
+              iptNumber.valid && (iptNumber.dirty || iptNumber.touched)
+            "
+            [class.has-error]="
+              !iptNumber.valid && (iptNumber.dirty || iptNumber.touched)
+            "
+          >
             <label class="control-label sr-only" for="inputSuccess"
               ><i class="fa fa-check"></i> Número</label
             >

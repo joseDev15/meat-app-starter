@@ -20,40 +20,37 @@
           <p class="lead">Endereço de Entrega:</p>
         </div>
         <div class="col-sm-6 col-xs-12">
-          <mt-input></mt-input>
+          <mt-input
+            errorMessage="campo obrigatorio e com 5 caracteres"
+            label="Endereço"
+          >
+            <input
+              class="form-control"
+              name="address"
+              ngModel
+              required
+              label
+              minlength="5"
+              autocomplete="off"
+              placeholder="Endereço"
+            />
+          </mt-input>
         </div>
         <div class="col-sm-2 col-xs-6">
-          <div
-            class="form-group"
-            [class.has-sucess]="
-              iptNumber.valid && (iptNumber.dirty || iptNumber.touched)
-            "
-            [class.has-error]="
-              !iptNumber.valid && (iptNumber.dirty || iptNumber.touched)
-            "
-          >
-            <label class="control-label sr-only" for="inputSuccess"
-              ><i class="fa fa-check"></i> Número</label
-            >
+          <mt-input errorMessage="numero obrigatorio" label="numero">
             <input
-              type="text"
               class="form-control"
-              id="inputSuccess"
-              required
-              autocomplete="off"
               name="number"
               ngModel
-              placeholder="Número"
-              #iptNumber="ngModel"
+              required
+              minlength="1"
+              autocomplete="off"
+              placeholder="numero"
             />
-            <span class="help-block"><i class="fa fa-check"></i> Ok</span>
-          </div>
+          </mt-input>
         </div>
         <div class="col-sm-4 col-xs-6">
-          <div class="form-group has-error">
-            <label class="control-label sr-only" for="inputSuccess"
-              ><i class="fa fa-check"></i> Complemento</label
-            >
+          <mt-input>
             <input
               type="text"
               class="form-control"
@@ -62,11 +59,9 @@
               ngModel
               placeholder="Complemento"
             />
-            <span class="help-block"
-              ><i class="fa fa-remove"></i> Help block with error</span
-            >
-          </div>
+          </mt-input>
         </div>
+
         <!-- /.col -->
       </div>
       <!-- /.row -->

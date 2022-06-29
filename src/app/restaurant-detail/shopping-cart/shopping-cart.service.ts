@@ -18,7 +18,7 @@ export class ShoppingCartService {
       founditem
     );
     if (founditem) {
-      founditem.quantity = founditem.quantity + 1;
+      this.increaseQty(founditem);
       console.log(
         "🚀 ~ file: shopping-cart.service.ts ~ line 15 ~ ShoppingCartService ~ addItem ~ founditem",
         founditem
@@ -40,10 +40,21 @@ export class ShoppingCartService {
   }
   total(): number {
     let total = this.items
-    .map((item) => item.value())
-    .reduce((prev, value) => prev + value, 0);
-    console.log("🚀 ~ file: shopping-cart.service.ts ~ line 45 ~ ShoppingCartService ~ total ~ total", total)
-    return total
-
+      .map((item) => item.value())
+      .reduce((prev, value) => prev + value, 0);
+    console.log(
+      "🚀 ~ file: shopping-cart.service.ts ~ line 45 ~ ShoppingCartService ~ total ~ total",
+      total
+    );
+    return total;
+  }
+  increaseQty(item: CartItem) {
+    item.quantity = item.quantity + 1;
+  }
+  decreaseQty(item: CartItem) {
+    item.quantity = item.quantity - 1;
+    if (item.quantity === 0) {
+      this.removeItem(item);
+    }
   }
 }

@@ -1,4 +1,5 @@
 //para tag ser acessiver é necessarios estar impor em ngModelue
+//refatorar
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule,LOCALE_ID } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -23,6 +24,7 @@ import { InputComponent } from './shared/input/input.component';
 import { RadioComponent } from './shared/radio/radio.component';
 import { OrderItemsComponent } from './order/order-items/order-items.component';
 import { OrderService } from './order/order.service';
+import { DeliveryCostsComponent } from './order/delivery-costs/delivery-costs.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +41,8 @@ import { OrderService } from './order/order.service';
     OrderComponent,
     InputComponent,
     RadioComponent,
-    OrderItemsComponent
+    OrderItemsComponent,
+    DeliveryCostsComponent
   ],
   imports: [
     BrowserModule,

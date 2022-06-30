@@ -4,6 +4,9 @@ import { Injectable } from "@angular/core";
 
 @Injectable()
 export class OrderService {
+  itemValue(): number {
+    return this.cartService.total();
+  }
 
   constructor(private cartService: ShoppingCartService) {}
   cartItems(): CartItem[] {

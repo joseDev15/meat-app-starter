@@ -9,6 +9,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./order.component.css"],
 })
 export class OrderComponent implements OnInit {
+  delivery: number = 8;
   paymentsOption: RadioOption[] = [
     { label: "Dinheiro", value: "MON" },
     { label: "Cartão de Débito", value: "DEB" },
@@ -17,6 +18,9 @@ export class OrderComponent implements OnInit {
   constructor(private OrderService: OrderService) {}
 
   ngOnInit() {}
+  itemsValue(): number {
+    return this.OrderService.itemValue();
+  }
   cartItems(): CartItem[] {
     return this.OrderService.cartItems();
   }
@@ -29,5 +33,4 @@ export class OrderComponent implements OnInit {
   remove(item: CartItem) {
     return this.OrderService.remove(item);
   }
-
 }
